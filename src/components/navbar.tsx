@@ -1,3 +1,5 @@
+
+
 import Link from "next/link";
 import { createClient } from "../../supabase/server";
 import { Button } from "./ui/button";
@@ -60,13 +62,13 @@ export default async function Navbar() {
                 href="/sign-in"
                 className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-[#3997A3]"
               >
-                Sign In
+                Prijava 
               </Link>
               <Link
                 href="/sign-up"
                 className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-[#3997A3]"
               >
-                Sign Up
+                Registracija
               </Link>
             </>
           )}
