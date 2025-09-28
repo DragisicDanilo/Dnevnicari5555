@@ -28,14 +28,14 @@ export default async function SignInPage({ searchParams }: LoginProps) {
         <div className="w-full max-w-md rounded-lg border border-border bg-card p-6 shadow-sm">
           <form className="flex flex-col space-y-6">
             <div className="space-y-2 text-center">
-              <h1 className="text-3xl font-semibold tracking-tight">Sign in</h1>
+              <h1 className="text-3xl font-semibold tracking-tight">Prijavi se</h1>
               <p className="text-sm text-muted-foreground">
-                Don't have an account?{" "}
+                Nemaš kreiran nalog?{" "}
                 <Link
                   className="text-primary font-medium hover:underline transition-all"
                   href="/sign-up"
                 >
-                  Sign up
+                  Registruj se
                 </Link>
               </p>
             </div>
@@ -58,13 +58,13 @@ export default async function SignInPage({ searchParams }: LoginProps) {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <Label htmlFor="password" className="text-sm font-medium">
-                    Password
+                    Šifra
                   </Label>
                   <Link
                     className="text-xs text-muted-foreground hover:text-foreground hover:underline transition-all"
                     href="/forgot-password"
                   >
-                    Forgot Password?
+                    Zaboravili ste šifru?
                   </Link>
                 </div>
                 <Input
@@ -83,7 +83,7 @@ export default async function SignInPage({ searchParams }: LoginProps) {
               pendingText="Signing in..."
               formAction={signInAction}
             >
-              Sign in
+              Prijavi se
             </SubmitButton>
 
             <FormMessage message={message} />

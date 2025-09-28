@@ -1,16 +1,22 @@
+"use client";
 
-
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { createClient } from "../../supabase/server";
+import Image from "next/image";
+import { createClient } from "../../supabase/client";
 import { Button } from "./ui/button";
 import UserProfile from "./user-profile";
 
-export default async function Navbar() {
+export default function Navbar() {
   const supabase = createClient();
+  const [user, setUser] = useState<any>(null);
 
-  const {
-    data: { user },
-  } = await (await supabase).auth.getUser();
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user);
+    });
+  }, [supabase]);
+
 
   return (
     <nav className="w-full bg-black py-2">
@@ -31,19 +37,19 @@ export default async function Navbar() {
             Naslovna
           </Link>
           <Link
-            href="/jobs"
+            href="/poslovi"
             className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-[#3997A3]"
           >
             Poslovi
           </Link>
           <Link
-            href="/post-job"
+            href="/dodaj_oglas"
             className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-[#3997A3]"
           >
             Dodaj oglas
           </Link>
           <Link
-            href="/contact"
+            href="/kontakt"
             className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-[#3997A3]"
           >
             Kontakt

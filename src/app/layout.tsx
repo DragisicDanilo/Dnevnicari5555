@@ -9,6 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Besplatno dodaj oglas! | Vazdabrt.me ",
   description: "Platforma za bratske usluge – poveži se sa ljudima u tvojoj blizini i pronađi ili ponudi priliku!.",
+  icons: {
+    icon: "/favicon.png?v=2",
+    shortcut: "/favicon.png?v=2",
+    apple: "/favicon.png?v=2",
+    
+  },
 };
 
 export default function RootLayout({
